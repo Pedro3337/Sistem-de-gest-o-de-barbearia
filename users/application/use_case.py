@@ -1,4 +1,8 @@
+from shutil import ExecError
 from uuid import UUID
+
+from users.api.schemas import UserRegisterIn
+from users.domain.entities import UserEntity
 
 from ..domain.repositories import IUserRepository
 from .dtos import UserInDTO,UserOutDTO,UserResponseDTO,UserUpdateDTO
@@ -18,7 +22,7 @@ class UserLoginUserCase:
         if not user:
             raise Exception('No user found')
 
-        if self.hash_service.encode(password, user.senha):
+        if self.hash_service.encode_password(password, user.password):
             token = self.jwt.create_access_token(user)
 
             # Criar hash service
@@ -29,6 +33,27 @@ class UserLoginUserCase:
                 user=UserOutDTO.from_domain(user),
                 acess_token=token
             )
+
+class UserRegisterUseCase:
+    def __init__(self, user_repo: IUserRepository):
+        self.user_repo = user_repo
+        self.hash_service = HashPasswordService()
+
+    def execute(self, dto: UserRegisterIn):
+
+        if self.user_repo.very_exist_by_email(dto.email):
+            raise Exception('Email already register')
+
+        hash_password = self.hash_service.hash_password(dto.password)
+
+        user = UserEntity(
+            name = dto.name,
+            email = dto.email,
+            password = hash_password
+        )
+
+        self.user_repo.save(user)
+        return UserOutDTO.from_domain(user)
 
 class UserUpdatePasswordUseCase:
     def __init__(self, user_repo: IUserRepository):
