@@ -1,5 +1,7 @@
+from uuid import UUID, uuid4
+
 from ninja import Schema
-from ..application.dtos import UserInDTO,UserOutDTO,UserUpdateDTO
+from ..application.dtos import UserInDTO,UserOutDTO, UserResponseDTO,UserUpdateDTO
 
 class UserIn(Schema):
     email: str
@@ -12,24 +14,20 @@ class UserIn(Schema):
         )
 
 class UserOut(Schema):
-    id: int
+    id: UUID
     name: str
     email: str
-    password: str
-    acess_token: str
-    refresh_token: str
 
     @classmethod
-    def from_domain(self, dto: UserOutDTO) -> UserOutDTO:
-        id = dto.id
-        name = dto.name
-        email = dto.email
-        password = dto.password
-        acess_token = dto.acess_token
-        refresh_token = dto.refresh_token
+    def from_domain(self, dto: UserOutDTO):
+        return UserOut(
+            id = str(dto.id),
+            name = dto.name,
+            email = dto.email,
+        )
 
 class UserUpdate(Schema):
-    id: int | None = None
+    id: UUID | None = None
     name: str | None = None
     email: str | None = None
     password: str | None = None

@@ -14,5 +14,5 @@ class UserEntity:
     def change_email(self, email):
         self.email = email
 
-    def change_passord(self, password):
+    def change_password(self, password):
         self.password = password
