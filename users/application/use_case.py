@@ -1,6 +1,7 @@
-from shutil import ExecError
 from uuid import UUID
 
+from clients.domain.entities import ClientEntity
+from clients.domain.repositories import IClientRepository
 from users.api.schemas import UserRegisterIn
 from users.domain.entities import UserEntity
 
@@ -11,7 +12,7 @@ from ..infrasctuture.auth.jwt_service import JWTService
 from services.hash_service import HashPasswordService
 
 class UserLoginUserCase:
-    def __init__(self, user_repo: IUserRepository):
+    def __init__(self, user_repo: IUserRepository, client_repo: IClientRepository):
         self.user_repo = user_repo
         self.jwt = JWTService()
         self.hash_service = HashPasswordService()
@@ -35,9 +36,10 @@ class UserLoginUserCase:
             )
 
 class UserRegisterUseCase:
-    def __init__(self, user_repo: IUserRepository):
+    def __init__(self, user_repo: IUserRepository, client_repo: IClientRepository):
         self.user_repo = user_repo
         self.hash_service = HashPasswordService()
+        self.client_repo = client_repo
 
     def execute(self, dto: UserRegisterIn):
 
@@ -46,13 +48,19 @@ class UserRegisterUseCase:
 
         hash_password = self.hash_service.hash_password(dto.password)
 
-        user = UserEntity(
+        user_entity = UserEntity(
             name = dto.name,
             email = dto.email,
             password = hash_password
         )
+        user = self.user_repo.save(user_entity)
 
-        self.user_repo.save(user)
+        client_entity = ClientEntity(
+            user_id=user.id
+        )
+
+        self.client_repo.save(client_entity)
+        
         return UserOutDTO.from_domain(user)
 
 class UserUpdatePasswordUseCase:

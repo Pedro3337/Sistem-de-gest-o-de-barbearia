@@ -2,6 +2,7 @@ from uuid import UUID
 
 from ninja import Router
 
+from clients.api.schemas import ClientIn
 from users.api.LoginSchema import LoginResponse
 from users.api.dependencies import UserContainer
 from users.api.schemas import UserIn, UserOut, UserRegisterIn
