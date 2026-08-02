@@ -14,6 +14,7 @@ class JWTService:
             payload = {
                 'sub': str(user.id),
                 'email': user.email,
+                'role': user.role,
                 'exp': datetime.utcnow() + timedelta(minutes=30),
             }
 

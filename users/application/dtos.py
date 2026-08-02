@@ -33,6 +33,7 @@ class UserRegisterInDTO(BaseModel):
     name: str
     email: str
     password: str
+    role: UserRole
 
 class UserUpdateDTO(BaseModel):
     id: UUID | None = None

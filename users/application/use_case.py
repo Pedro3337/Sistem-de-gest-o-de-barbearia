@@ -1,18 +1,27 @@
 from uuid import UUID
 
+from django.conf.locale import ro
+
+from barber.api.schema import BarberRegisterIn
+from barber.application.dtos import BarberOutDTO
+from barber.domain.entities import BarberEntity
+from barber.domain.repositories import IBarberRepository
+from barber.infrasctuture.models import Barber
 from clients.domain.entities import ClientEntity
 from clients.domain.repositories import IClientRepository
 from users.api.schemas import UserRegisterIn
+from users.domain import role
 from users.domain.entities import UserEntity
+from users.domain.role import UserRole
 
 from ..domain.repositories import IUserRepository
-from .dtos import UserInDTO,UserOutDTO,UserResponseDTO,UserUpdateDTO
+from .dtos import UserInDTO,UserOutDTO, UserRegisterInDTO,UserResponseDTO,UserUpdateDTO
 from ..infrasctuture.auth.jwt_service import JWTService
 
 from services.hash_service import HashPasswordService
 
 class UserLoginUserCase:
-    def __init__(self, user_repo: IUserRepository, client_repo: IClientRepository):
+    def __init__(self, user_repo: IUserRepository):
         self.user_repo = user_repo
         self.jwt = JWTService()
         self.hash_service = HashPasswordService()
@@ -41,7 +50,7 @@ class UserRegisterUseCase:
         self.hash_service = HashPasswordService()
         self.client_repo = client_repo
 
-    def execute(self, dto: UserRegisterIn):
+    def execute(self, dto: UserRegisterInDTO):
 
         if self.user_repo.very_exist_by_email(dto.email):
             raise Exception('Email already register')
@@ -51,7 +60,8 @@ class UserRegisterUseCase:
         user_entity = UserEntity(
             name = dto.name,
             email = dto.email,
-            password = hash_password
+            password = hash_password,
+            role = dto.role
         )
         user = self.user_repo.save(user_entity)
 
@@ -84,5 +94,34 @@ class UserUpdatePasswordUseCase:
         self.user_repo.save(user)
         return UserOutDTO.from_domain(user)
 
+class RegisterBarberUseCase:
+    def __init__(self, user_repo: IUserRepository, barber_repo: IBarberRepository):
+        self.user_repo = user_repo
+        self.barber_repo = barber_repo
+        self.hash_service = HashPasswordService()
+
+    def execute(self, dto: UserInDTO, phone: str, commission: int) -> UserOutDTO:
+        if self.user_repo.very_exist_by_email(dto.email):
+            raise Exception('Email already register')
+
+        hash_password = self.hash_service.hash_password(dto.password)
+
+        user_entity = UserEntity(
+            name = dto.name,
+            email = dto.email,
+            password = hash_password,
+            role = dto.role
+        )
+
+        user = self.user_repo.save(user_entity)
+
+        barber_entity = BarberEntity(
+            user=user.id,
+            phone=phone,
+            commission=commission
+        )
+
+        self.barber_repo.save(barber_entity)
         
+        return UserOutDTO.from_domain(user)
     

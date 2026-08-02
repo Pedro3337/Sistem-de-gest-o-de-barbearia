@@ -9,7 +9,7 @@ class User(models.Model):
     name = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
     password = models.CharField(max_length=200)
-    role = models.CharField(max_length=200, choices=UserRole, default=UserRole.cliente)
+    role = models.CharField(max_length=200, choices=UserRole)
     activate = models.BooleanField(default=True)
 
     class Meta:

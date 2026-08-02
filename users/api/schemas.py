@@ -17,12 +17,14 @@ class UserRegisterIn(Schema):
     name: str
     email: str
     password: str
+    role: UserRole 
 
     def to_dto(self):
         return UserRegisterInDTO(
             name = self.name,
             email = self.email,
             password = self.password,
+            role = self.role
         )
 
 class UserOut(Schema):
