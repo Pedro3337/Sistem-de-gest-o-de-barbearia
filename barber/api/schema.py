@@ -2,7 +2,7 @@ from uuid import UUID
 
 from ninja import Schema
 
-from barber.application.dtos import BarberOutDTO, BarberRegisterInDTO
+from barber.application.dtos import BarberOutDTO, BarberRegisterInDTO, BarberUpdateDTO
 from barber.infrasctuture.models import Barber
 from users.domain.role import UserRole
 
@@ -22,32 +22,34 @@ class BarberRegisterIn(Schema):
 
 
 
+
 class BarberOut(Schema):
     id: UUID
-    name: str
-    email: str
-    role: UserRole
-    activate: bool
+    user: UUID
     phone: str
     commission: int
+    activate: bool
 
     @classmethod
     def from_domain(self, dto: BarberOutDTO):
         return BarberOut(
-            id = str(dto.id),
-            name = dto.name,
-            email = dto.email,
-            role = dto.role,
-            activate = dto.activate,
+            id = dto.id,
+            user = dto.user,
             phone = dto.phone,
-            commission = dto.commission
+            commission = dto.commission,
+            activate = dto.activate
         )
 
 
 
 class BarberUpdate(Schema):
-    id: UUID | None = None
-    user_id: UUID | None = None
-    telefone: str | None = None
+    phone: str | None = None
     commission: float | None = None
     activate: bool | None = None
+
+    def to_dto(self):
+        return BarberUpdateDTO(
+            phone=self.phone,
+            commission=self.commission,
+            activate=self.activate
+        )

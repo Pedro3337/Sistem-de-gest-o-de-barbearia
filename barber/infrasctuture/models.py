@@ -9,8 +9,8 @@ class Barber(models.Model):
         on_delete=models.CASCADE
     )
     phone = models.CharField(default=100)
-    commission = models.DecimalField(max_digits=5, decimal_places=2)
-    activate = models.BooleanField(default=True)
+    commission = models.IntegerField(default=0)
+    activate = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'barbers'

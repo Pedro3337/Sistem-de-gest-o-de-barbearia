@@ -16,21 +16,22 @@ class BarberRegisterInDTO(BaseModel):
 
 class BarberOutDTO(BaseModel):
     id: UUID
-    name: str
-    email: str
-    role: UserRole
-    activate: bool
+    user: UUID
     phone: str
     commission: int
+    activate: bool
 
     @classmethod
     def from_domain(self, entity: BarberEntity):
         return BarberOutDTO(
-            id = str(entity.id),
-            name = entity.name,
-            email = entity.email,
-            role = entity.role,
-            activate = entity.activate,
+            id = entity.id,
+            user = entity.user.id,
             phone = entity.phone,
-            commission = entity.commission
+            commission = entity.commission,
+            activate = entity.activate
         )
+
+class BarberUpdateDTO(BaseModel):
+    phone: str | None = None
+    commission: int | None = None
+    activate: bool | None = None
