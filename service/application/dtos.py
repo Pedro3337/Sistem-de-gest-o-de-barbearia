@@ -20,13 +20,19 @@ class ServiceOutDTO(Schema):
 
     @classmethod
     def from_domain(cls, entity: ServiceEntity):
+
+        print("ID:", entity.id)
+        print("NAME:", entity.name)
+        print("DESCRIPTION:", entity.description, type(entity.description))
+        print("ACTIVATE:", entity.activate, type(entity.activate))
+
         return cls(
             id=entity.id,
             name=entity.name,
             description=entity.description,
             duration=entity.duration,
             value=entity.value,
-            entity=entity.activate
+            activate=entity.activate
         )
 
 class ServiceUpdateDTO(Schema):

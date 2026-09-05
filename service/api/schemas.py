@@ -1,8 +1,10 @@
+from posixpath import dirname
 from uuid import UUID
 
+from django.utils.timezone import activate
 from ninja import Schema
 
-from service.application.dtos import ServiceInDTO, ServiceOutDTO
+from service.application.dtos import ServiceInDTO, ServiceOutDTO, ServiceUpdateDTO
 
 class ServiceIn(Schema):
     name: str
@@ -34,7 +36,7 @@ class ServiceOut(Schema):
             description=dto.description,
             duration=dto.duration,
             value=dto.value,
-            entity=dto.activate
+            activate=dto.activate
         )
 
 class ServiceUpdate(Schema):
@@ -43,3 +45,12 @@ class ServiceUpdate(Schema):
     duration: int | None = None
     value: int | None = None
     activate: bool | None = None
+
+    def to_dto(self) -> ServiceUpdateDTO:
+        return ServiceUpdateDTO(
+            name = self.name,
+            description = self.description,
+            duration= self.duration,
+            value = self.value,
+            activate = self.activate
+        )

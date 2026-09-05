@@ -1,8 +1,6 @@
 from dataclasses import dataclass,field
 from uuid import UUID, uuid4
 
-from django.utils.timezone import activate
-
 @dataclass
 class ServiceEntity:
     id: UUID = field(default_factory=uuid4)
@@ -25,4 +23,4 @@ class ServiceEntity:
         self.value = value
 
     def change_activate(self, activate: bool):
-        self.description = activate
+        self.activate = activate
