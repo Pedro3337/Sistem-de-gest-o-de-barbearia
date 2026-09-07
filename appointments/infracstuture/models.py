@@ -7,17 +7,17 @@ from appointments.domain.role import AppointmentRole
 
 class Appointments(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4)
-    client_id = models.ForeignKey(
+    client = models.ForeignKey(
         'clients.Client',
         on_delete=models.CASCADE
     )
 
-    barber_id = models.ForeignKey(
+    barber = models.ForeignKey(
         'barber.Barber',
         on_delete=models.CASCADE
     )
 
-    service_id = models.ForeignKey(
+    service = models.ForeignKey(
         'service.Service',
         on_delete=models.CASCADE
     )
