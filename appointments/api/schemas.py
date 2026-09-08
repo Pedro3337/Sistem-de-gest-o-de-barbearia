@@ -4,7 +4,7 @@ from datetime import datetime
 
 from ninja import Schema
 
-from appointments.application.dtos import AppointmentInDTO, AppointmentOutDTO
+from appointments.application.dtos import AppointmentInDTO, AppointmentOutDTO, AppointmentUpdateDTO
 from appointments.domain.entities import AppointmentEntity
 from appointments.domain.role import AppointmentRole
 
@@ -35,30 +35,24 @@ class AppointmentOut(Schema):
     status: AppointmentRole
     observation: str
 
-    def from_domain(self, dto: AppointmentOutDTO):
-        return AppointmentIn(
+    @classmethod
+    def from_domain(cls, dto: AppointmentOutDTO):
+        return AppointmentOutDTO(
             id=dto.id,
             client=dto.client,
             barber=dto.barber,
             service=dto.service,
-            datetime=dto.date_time,
+            date_time=dto.date_time,
+            status=dto.status,
             observation=dto.observation
         )
 
-class AppointmentUpdateDTO(Schema):
-    client: UUID | None = None
-    barber: UUID | None = None
-    service: UUID | None = None
-    date_time: datetime | None = None
+class AppointmentUpdate(Schema):
     status: AppointmentRole | None = None
     observation: str | None = None
 
     def to_dto(self):
         return AppointmentUpdateDTO(
-            client=self.client,
-            barber=self.barber,
-            service=self.service,
-            date_time=self.date_time,
             status=self.status,
             observation=self.observation
         )

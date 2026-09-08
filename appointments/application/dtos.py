@@ -29,17 +29,14 @@ class AppointmentOutDTO(BaseModel):
     def from_domain(cls, entity: AppointmentEntity):
         return cls(
             id=entity.id,
-            client=entity.client,
-            barber=entity.barber,
-            service=entity.service,
-            datetime=entity.date_time,
+            client=entity.client.id,
+            barber=entity.barber.id,
+            service=entity.service.id,
+            date_time=entity.date_time,
+            status=entity.status,
             observation=entity.observation
         )
 
 class AppointmentUpdateDTO(BaseModel):
-    client: UUID | None = None
-    barber: UUID | None = None
-    service: UUID | None = None
-    date_time: datetime | None = None
     status: AppointmentRole | None = None
     observation: str | None = None

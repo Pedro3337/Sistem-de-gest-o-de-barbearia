@@ -1,0 +1,77 @@
+from datetime import datetime
+
+from typing import List
+from uuid import UUID
+
+from clients.infrasctuture.models import Client
+
+from appointments.domain.entities import AppointmentEntity
+from appointments.domain.repositories import IAppointmentsRepository
+from appointments.infracstuture.models import Appointments
+from barber.infrasctuture.models import Barber
+from service.infrasctuture.models import Service
+
+
+class AppointmentRepository(IAppointmentsRepository):
+    def save(self, entity: AppointmentEntity) -> AppointmentEntity:
+
+        Appointments.objects.update_or_create(
+            id=entity.id,
+            defaults={
+                'client': entity.client,
+                'barber': entity.barber,
+                'service': entity.service,
+                'date_time': entity.date_time,
+                'status': entity.status,
+                'observation': entity.observation
+            }
+        )
+
+        return entity
+
+    def find_by_id(self, id: UUID) -> AppointmentEntity:
+        try:
+            return self._to_model(Appointments.objects.get(id=id))
+        except Appointments.DoesNotExist:
+            return None
+
+    def response_all_appointments(self) -> List[AppointmentEntity]:
+        try:
+            return [self._to_model(appointments) for appointments in Appointments.objects.all()]
+        except Appointments.DoesNotExist:
+            return None
+
+    def response_appointments_where_barber_id(self, barber_UUID: UUID) -> List[AppointmentEntity]:
+        try:
+            return [
+                self._to_model(appointments)
+                for appointments in Appointments.objects.filter(barber=barber_UUID).all()
+            ]
+        except Appointments.DoesNotExist:
+            return None
+
+    def response_appointement_where_barber_id_and_date(self, id: UUID, date: datetime):
+        try:
+            return [
+                self._to_model(appointment)
+                for appointment in Appointments.objects.filter(id=id, date=date)
+            ]
+        except Appointments.DoesNotExist:
+            return None
+
+    def response_appointment_where_client_id(self, client_id: UUID) -> AppointmentEntity:
+        try:
+            return self._to_model(Appointments.objects.get(client=client_id))
+        except Appointments.DoesNotExist:
+            return None
+
+    def _to_model(self, model: Appointments) -> AppointmentEntity:
+        return AppointmentEntity(
+            id=model.id,
+            client=model.client,
+            barber=model.barber,
+            service=model.service,
+            date_time=model.date_time,
+            status=model.status,
+            observation=model.observation
+        )

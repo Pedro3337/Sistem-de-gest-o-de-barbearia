@@ -22,7 +22,7 @@ class Appointments(models.Model):
         on_delete=models.CASCADE
     )
 
-    date_time = models.DateTimeField()
+    date_time = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
         max_length=100, choices=AppointmentRole, default=AppointmentRole.agendado
     )
