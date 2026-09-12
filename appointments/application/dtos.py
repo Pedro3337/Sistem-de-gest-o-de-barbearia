@@ -1,40 +1,41 @@
 from uuid import UUID
 
-from datetime import datetime
-
 from pydantic import BaseModel
+from datetime import date,time
 
+from appointments.application.role import AppointmentRole
 from appointments.domain.entities import AppointmentEntity
-from appointments.domain.role import AppointmentRole
 
 class AppointmentInDTO(BaseModel):
     client: UUID
     barber: UUID
     service: UUID
-    date_time: datetime
+    date_a: date
+    time_a: time
     status: AppointmentRole
     observation: str
-
 
 class AppointmentOutDTO(BaseModel):
     id: UUID
     client: UUID
     barber: UUID
     service: UUID
-    date_time: datetime
+    date_a: date
+    time_a: time
     status: AppointmentRole
     observation: str
 
     @classmethod
     def from_domain(cls, entity: AppointmentEntity):
         return cls(
-            id=entity.id,
-            client=entity.client.id,
-            barber=entity.barber.id,
-            service=entity.service.id,
-            date_time=entity.date_time,
-            status=entity.status,
-            observation=entity.observation
+            id = entity.id,
+            client = entity.client,
+            barber = entity.barber,
+            service = entity.service,
+            date_a = entity.date_a,
+            time_a = entity.time_a,
+            status = entity.status,
+            observation = entity.observation
         )
 
 class AppointmentUpdateDTO(BaseModel):

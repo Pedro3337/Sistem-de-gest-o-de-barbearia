@@ -1,8 +1,11 @@
 from datetime import datetime
 
+from http import client
 from typing import List
 from uuid import UUID
 
+import appointments
+from appointments.domain.role import AppointmentRole
 from clients.infrasctuture.models import Client
 
 from appointments.domain.entities import AppointmentEntity
@@ -15,12 +18,16 @@ from service.infrasctuture.models import Service
 class AppointmentRepository(IAppointmentsRepository):
     def save(self, entity: AppointmentEntity) -> AppointmentEntity:
 
+        client = Client.objects.get(id=entity.client)
+        barber = Barber.objects.get(id=entity.barber)
+        service = Service.objects.get(id=entity.service)
+
         Appointments.objects.update_or_create(
             id=entity.id,
             defaults={
-                'client': entity.client,
-                'barber': entity.barber,
-                'service': entity.service,
+                'client': client,
+                'barber': barber,
+                'service': service,
                 'date_time': entity.date_time,
                 'status': entity.status,
                 'observation': entity.observation
@@ -64,6 +71,14 @@ class AppointmentRepository(IAppointmentsRepository):
             return self._to_model(Appointments.objects.get(client=client_id))
         except Appointments.DoesNotExist:
             return None
+
+    def update_appointmenr(self, id: UUID, status: AppointmentRole, observation: str):
+        appointment = Appointments.objects.get(id)
+
+        appointment.status = status
+        appointment.observation = observation
+
+        return appointment.save(update_fields=['status', 'status'])
 
     def _to_model(self, model: Appointments) -> AppointmentEntity:
         return AppointmentEntity(

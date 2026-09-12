@@ -1,29 +1,29 @@
 from uuid import UUID
 
-from datetime import datetime
-
 from ninja import Schema
+from datetime import date,time
 
-from appointments.application.dtos import AppointmentInDTO, AppointmentOutDTO, AppointmentUpdateDTO
-from appointments.domain.entities import AppointmentEntity
-from appointments.domain.role import AppointmentRole
+from appointments.application.dtos import AppointmentInDTO, AppointmentOutDTO
+from appointments.application.role import AppointmentRole
 
 class AppointmentIn(Schema):
     client: UUID
     barber: UUID
     service: UUID
-    date_time: datetime
+    date_a: date
+    time_a: time
     status: AppointmentRole
     observation: str
 
-    def to_dto(self) -> AppointmentInDTO:
+    def to_dto(self):
         return AppointmentInDTO(
-            client=self.client,
-            barber=self.barber,
-            service=self.service,
-            date_time=self.date_time,
-            status=self.status,
-            observation=self.observation
+            client = self.client,
+            barber = self.barber,
+            service = self.service,
+            date_a = self.date_a,
+            time_a = self.time_a,
+            status = self.status,
+            observation = self.observation
         )
 
 class AppointmentOut(Schema):
@@ -31,20 +31,21 @@ class AppointmentOut(Schema):
     client: UUID
     barber: UUID
     service: UUID
-    date_time: datetime
+    date_a: date
+    time_a: time
     status: AppointmentRole
     observation: str
 
-    @classmethod
-    def from_domain(cls, dto: AppointmentOutDTO):
-        return AppointmentOutDTO(
-            id=dto.id,
-            client=dto.client,
-            barber=dto.barber,
-            service=dto.service,
-            date_time=dto.date_time,
-            status=dto.status,
-            observation=dto.observation
+    def from_domain(self, dto: AppointmentOutDTO):
+        return AppointmentOut(
+            id = dto.id,
+            client = dto.client,
+            barber = dto.barber,
+            service = dto.service,
+            date_a = dto.date_a,
+            time_a = dto.time_a,
+            status = dto.status,
+            observation = dto.observation
         )
 
 class AppointmentUpdate(Schema):
@@ -52,7 +53,7 @@ class AppointmentUpdate(Schema):
     observation: str | None = None
 
     def to_dto(self):
-        return AppointmentUpdateDTO(
-            status=self.status,
-            observation=self.observation
+        return AppointmentInDTO(
+            status = self.status,
+            observation = self.observation
         )

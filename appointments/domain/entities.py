@@ -1,8 +1,8 @@
-from dataclasses import dataclass, field
-from datetime import datetime
+from dataclasses import dataclass,field
+from datetime import date,time
 from uuid import UUID, uuid4
 
-from appointments.domain.role import AppointmentRole
+from appointments.application.role import AppointmentRole
 
 @dataclass
 class AppointmentEntity:
@@ -10,13 +10,15 @@ class AppointmentEntity:
     client: UUID | None = field(default=None)
     barber: UUID | None = field(default=None)
     service: UUID | None = field(default=None)
-    date_time: datetime = field(default_factory=datetime)
+    date_a: date = field(default_factory=date)
+    time_a: time = field(default_factory=time)
     status: AppointmentRole = field(default=AppointmentRole.agendado)
     observation: str = field(default='')
 
-    def change_status(self, status: str):
+    def change_status(self, status: AppointmentRole) -> None:
         self.status = status
 
-    def change_observation(self, observation: str):
+    def change_observation(self, observation: str) -> None:
         self.observation = observation
 
+        
