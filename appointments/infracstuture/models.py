@@ -21,6 +21,7 @@ class Appointment(models.Model):
     )
     date = models.DateField()
     time = models.TimeField()
-    status = CharField(max_length=30, choices=AppointmentRole, default=AppointmentRole.agendado)
+    status = models.CharField(
+        max_length=30, choices=AppointmentRole, default=AppointmentRole.agendado
+    )
     observation = TextField()
-    
