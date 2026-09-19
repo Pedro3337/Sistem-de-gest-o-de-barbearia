@@ -10,8 +10,8 @@ class AppointmentEntity:
     client: UUID | None = field(default=None)
     barber: UUID | None = field(default=None)
     service: UUID | None = field(default=None)
-    date_a: date = field(default_factory=date)
-    time_a: time = field(default_factory=time)
+    date_a: date | None = None
+    time_a: time | None = None
     status: AppointmentRole = field(default=AppointmentRole.agendado)
     observation: str = field(default='')
 
@@ -21,4 +21,3 @@ class AppointmentEntity:
     def change_observation(self, observation: str) -> None:
         self.observation = observation
 
-        

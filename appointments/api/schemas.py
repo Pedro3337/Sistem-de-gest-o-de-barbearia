@@ -3,7 +3,7 @@ from uuid import UUID
 from ninja import Schema
 from datetime import date,time
 
-from appointments.application.dtos import AppointmentInDTO, AppointmentOutDTO
+from appointments.application.dtos import AppointmentInDTO, AppointmentOutDTO, AppointmentUpdateDTO
 from appointments.application.role import AppointmentRole
 
 class AppointmentIn(Schema):
@@ -35,9 +35,14 @@ class AppointmentOut(Schema):
     time_a: time
     status: AppointmentRole
     observation: str
+    name_client: str
+    name_barber: str
+    name_service: str
+    value_service: float
 
-    def from_domain(self, dto: AppointmentOutDTO):
-        return AppointmentOut(
+    @classmethod
+    def from_domain(cls, dto: AppointmentOutDTO):
+        return cls(
             id = dto.id,
             client = dto.client,
             barber = dto.barber,
@@ -45,7 +50,11 @@ class AppointmentOut(Schema):
             date_a = dto.date_a,
             time_a = dto.time_a,
             status = dto.status,
-            observation = dto.observation
+            observation = dto.observation,
+            name_client = dto.name_client,
+            name_barber = dto.name_barber,
+            name_service = dto.name_service,
+            value_service = dto.value_service
         )
 
 class AppointmentUpdate(Schema):
@@ -53,7 +62,7 @@ class AppointmentUpdate(Schema):
     observation: str | None = None
 
     def to_dto(self):
-        return AppointmentInDTO(
+        return AppointmentUpdateDTO(
             status = self.status,
             observation = self.observation
         )

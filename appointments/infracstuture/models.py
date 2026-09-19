@@ -1,10 +1,7 @@
-from email.policy import default
-from random import choices
 from uuid import uuid4
 
 from django.db import models
 from django.db.models.fields import TextField
-from django.forms.fields import CharField
 
 from appointments.application.role import AppointmentRole
 
@@ -25,3 +22,7 @@ class Appointment(models.Model):
         max_length=30, choices=AppointmentRole, default=AppointmentRole.agendado
     )
     observation = TextField()
+
+
+    class Meta:
+        db_table = 'appointments'

@@ -12,7 +12,7 @@ from users.infrasctuture.models import User
 class BarberRepositroy(IBarberRepository):
     def save(self, entity: BarberEntity) -> BarberEntity:
 
-        user = User.objects.get(id=entity.user.id)
+        user = User.objects.get(id=entity.user)
 
         Barber.objects.update_or_create(
             id=entity.id,
