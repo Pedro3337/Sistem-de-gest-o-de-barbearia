@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'barber',
     'service',
     'appointments',
+    'costumerservice',
 ]
 
 MIDDLEWARE = [
