@@ -3,7 +3,7 @@ from typing import List
 from datetime import date
 from uuid import UUID
 
-from appointments.application.domain.entities import AppointmentEntity
+from appointments.domain.entities import AppointmentEntity
 from appointments.infracstuture.models import Appointment
 
 class IAppointmentRepositorie(ABC):

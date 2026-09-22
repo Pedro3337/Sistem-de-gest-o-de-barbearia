@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from datetime import date,time
 
 from appointments.application.role import AppointmentRole
-from appointments.application.domain.entities import AppointmentEntity
+from appointments.domain.entities import AppointmentEntity
 from service.infrasctuture.models import Service
 
 class AppointmentInDTO(BaseModel):

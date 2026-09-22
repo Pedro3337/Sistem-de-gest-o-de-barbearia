@@ -3,6 +3,7 @@ from turtle import mode
 from uuid import uuid4
 
 from django.db import models
+from django.forms.fields import FloatField
 
 class CostumerService(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4)
@@ -21,7 +22,9 @@ class CostumerService(models.Model):
     )
     date = models.DateField()
     month = models.IntegerField()
-    time = models.TimeField()
+    deduct = models.FloatField()
+    total_value = models.FloatField()
+    end_value = models.FloatField(default=0)
     observation = models.TextField()
 
     class Meta:

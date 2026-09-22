@@ -1,8 +1,8 @@
 from uuid import UUID
 
 import appointments
-from appointments.application.domain.entities import AppointmentEntity
-from appointments.application.domain.respositorie import IAppointmentRepositorie
+from appointments.domain.entities import AppointmentEntity
+from appointments.domain.respositorie import IAppointmentRepositorie
 from appointments.infracstuture.models import Appointment
 from clients.infrasctuture.models import Client
 from barber.infrasctuture.models import Barber

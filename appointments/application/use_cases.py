@@ -3,8 +3,8 @@ from typing import List
 from uuid import UUID
 
 from appointments.application.dtos import AppointmentInDTO, AppointmentOutDTO, AppointmentUpdateDTO
-from appointments.application.domain.entities import AppointmentEntity
-from appointments.application.domain.respositorie import IAppointmentRepositorie
+from appointments.domain.entities import AppointmentEntity
+from appointments.domain.respositorie import IAppointmentRepositorie
 
 
 class RegisterAppointmentUseCase:

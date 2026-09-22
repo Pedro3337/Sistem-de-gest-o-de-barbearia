@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from costumerservice.infracstuture.models import CostumerService
+
+admin.site.register(CostumerService)

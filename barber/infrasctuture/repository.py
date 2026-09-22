@@ -1,8 +1,5 @@
-from turtle import mode
 from typing import List
 from uuid import UUID
-
-from django.utils.timezone import activate
 
 from barber.domain.entities import BarberEntity
 from barber.domain.repositories import IBarberRepository
