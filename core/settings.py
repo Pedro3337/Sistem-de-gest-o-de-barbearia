@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'service',
     'appointments',
     'costumerservice',
+    'payment',
 ]
 
 MIDDLEWARE = [
