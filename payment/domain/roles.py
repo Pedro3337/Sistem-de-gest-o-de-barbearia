@@ -6,6 +6,6 @@ class PaymentRole(models.TextChoices):
     debito = 'DEBITO', 'Débito'
     credito = 'CREDITO', 'Crédito'
 
-class PaymantStatusRole(models.TextChoices):
+class PaymentStatusRole(models.TextChoices):
     pago = 'PAGO','Pago'
     estornado = 'ESTORNADO','Estornado'

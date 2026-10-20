@@ -1,6 +1,5 @@
 from dependency_injector import containers, providers
 
-from appointments.application.use_cases import ResponseAllAppointmentUseCase
 from costumerservice.application.use_cases import RegisterCostumerServiceUseCase, ResponseAllCostumerServiceUseCase, ResponseCostumerServiceWhereBarberIdAndDate, ResponseCostumerServiceWhereBarberIdAndMonth, ResponseCostumerServiceWhereDate, ResponseCostumerServiceWhereMonth, UpdateCostumerServiceUseCase
 from costumerservice.infracstuture.repository import CostumerServiceRepository
 
