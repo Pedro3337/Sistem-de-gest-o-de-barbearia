@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · Corte&amp;Cia</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h9l4-4v8l-4-4"/><path d="M17 12h3"/></svg></div>
+      <div class="sidebar__brand-text">
+        <div class="name">Corte&amp;Cia</div>
+        <div class="role">Administrador</div>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+        <a class="nav-item active" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="12" width="8" height="9" rx="1.5"/><rect x="3" y="14" width="8" height="7" rx="1.5"/></svg><span>Dashboard</span></a>
+        <a class="nav-item" href="usuarios.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="8" r="3"/><path d="M2.5 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="17" cy="8.5" r="2.4"/><path d="M15.5 14.2c2.6.4 4.6 2.5 4.6 5.8"/></svg><span>Usuários</span></a>
+        <a class="nav-item" href="clientes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6"/></svg><span>Clientes</span></a>
+        <a class="nav-item" href="barbeiros.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6.5" r="2.4"/><circle cx="6" cy="17.5" r="2.4"/><path d="M8 8l12 12M20 4L8 16"/></svg><span>Barbeiros</span></a>
+        <a class="nav-item" href="servicos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h9l4-4v8l-4-4"/><path d="M17 12h3"/></svg><span>Serviços</span></a>
+        <a class="nav-item" href="agendamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 3v4M16 3v4"/></svg><span>Agendamentos</span></a>
+        <a class="nav-item" href="relatorios.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M11 20V4M18 20v-7"/><path d="M3 20h18"/></svg><span>Relatórios</span></a>
+        <a class="nav-item" href="configuracoes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.2-1.6l2-1.5-2-3.4-2.3.8a7 7 0 00-2.7-1.6L13.4 2h-2.8l-.4 2.7a7 7 0 00-2.7 1.6l-2.3-.8-2 3.4 2 1.5A7 7 0 005 12a7 7 0 00.2 1.6l-2 1.6 2 3.4 2.3-.9c.8.7 1.7 1.3 2.7 1.6l.4 2.7h2.8l.4-2.7c1-.3 1.9-.9 2.7-1.6l2.3.9 2-3.4-2-1.6c.1-.5.2-1 .2-1.6z"/></svg><span>Configurações</span></a>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="../login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M15 16l5-4-5-4M20 12H9"/></svg><span>Sair</span></a>
+    </div>
+  </aside>
+  <div class="nav-scrim" data-nav-scrim></div>
+  <div class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;min-width:0;">
+        <button class="menu-toggle" data-menu-toggle aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="topbar__title">
+          <h1>Dashboard</h1>
+          <p>Painel administrativo geral da barbearia</p>
+        </div>
+      </div>
+      <div class="topbar__right">
+        <button class="icon-btn" aria-label="Notificações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9a6 6 0 1112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 13 6 9z"/><path d="M10 18a2 2 0 004 0"/></svg></button>
+        <div class="user-chip">
+          <div class="avatar">MS</div>
+          <div class="who"><div class="n">Marina Souza</div><div class="r">Administrador</div></div>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+
+      <div class="page-head">
+        <div>
+          <h2>Visão geral</h2>
+          <p class="sub">Segunda-feira, 21 de setembro — resumo do dia na barbearia.</p>
+        </div>
+        <a class="btn btn-primary" href="agendamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Novo agendamento</a>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="label">Faturamento do mês</div>
+          <div class="value">R$ 18.420</div>
+          <div class="delta up">↑ 12% vs. mês anterior</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Agendamentos hoje</div>
+          <div class="value">14</div>
+          <div class="delta up">↑ 3 a mais que ontem</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Clientes ativos</div>
+          <div class="value">312</div>
+          <div class="delta up">↑ 18 novos este mês</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Barbeiros ativos</div>
+          <div class="value">6</div>
+          <div class="delta down">↓ 1 de férias</div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:20px;">
+        <div class="card">
+          <div class="card__head">
+            <div><h3>Agenda de hoje</h3><div class="sub">Próximos atendimentos em todas as cadeiras</div></div>
+            <a class="btn btn-ghost btn-sm" href="agendamentos.html">Ver agenda completa</a>
+          </div>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-time">09:30<span>Cadeira 2</span></div>
+              <div class="tl-info"><div class="title">Rafael Menezes — Corte + Barba</div><div class="meta">Barbeiro: João Pedro</div></div>
+              <span class="badge badge-gold"><span class="dot"></span>Agendado</span>
+            </div>
+            <div class="tl-item">
+              <div class="tl-time">10:00<span>Cadeira 1</span></div>
+              <div class="tl-info"><div class="title">Carlos Eduardo — Barba</div><div class="meta">Barbeiro: Lucas Andrade</div></div>
+              <span class="badge badge-green"><span class="dot"></span>Concluído</span>
+            </div>
+            <div class="tl-item">
+              <div class="tl-time">10:45<span>Cadeira 3</span></div>
+              <div class="tl-info"><div class="title">Felipe Torres — Corte degradê</div><div class="meta">Barbeiro: Diego Farias</div></div>
+              <span class="badge badge-blue"><span class="dot"></span>Confirmado</span>
+            </div>
+            <div class="tl-item">
+              <div class="tl-time">11:30<span>Cadeira 2</span></div>
+              <div class="tl-info"><div class="title">Bruno Lima — Corte + Sobrancelha</div><div class="meta">Barbeiro: João Pedro</div></div>
+              <span class="badge badge-red"><span class="dot"></span>Faltou</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><div><h3>Serviços mais realizados</h3><div class="sub">Últimos 30 dias</div></div></div>
+          <div class="card__body">
+            <div class="bar-row"><div class="name">Corte degradê</div><div class="bar-track"><div class="bar-fill" style="width:86%"></div></div><div class="bar-val">142</div></div>
+            <div class="bar-row"><div class="name">Barba completa</div><div class="bar-track"><div class="bar-fill" style="width:64%"></div></div><div class="bar-val">98</div></div>
+            <div class="bar-row"><div class="name">Corte + Barba</div><div class="bar-track"><div class="bar-fill" style="width:52%"></div></div><div class="bar-val">76</div></div>
+            <div class="bar-row"><div class="name">Sobrancelha</div><div class="bar-track"><div class="bar-fill" style="width:28%"></div></div><div class="bar-val">41</div></div>
+            <div class="bar-row"><div class="name">Pigmentação</div><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div><div class="bar-val">22</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <div><h3>Últimos agendamentos</h3><div class="sub">Atualizado agora há pouco</div></div>
+          <a class="btn btn-outline btn-sm" href="relatorios.html">Ver relatórios</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Cliente</th><th>Barbeiro</th><th>Serviço</th><th>Data / hora</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td class="cell-primary">Rafael Menezes</td><td>João Pedro</td><td>Corte + Barba</td><td>21/09 · 09:30</td><td><span class="badge badge-gold"><span class="dot"></span>Agendado</span></td></tr>
+              <tr><td class="cell-primary">Carlos Eduardo</td><td>Lucas Andrade</td><td>Barba</td><td>21/09 · 10:00</td><td><span class="badge badge-green"><span class="dot"></span>Concluído</span></td></tr>
+              <tr><td class="cell-primary">Felipe Torres</td><td>Diego Farias</td><td>Corte degradê</td><td>21/09 · 10:45</td><td><span class="badge badge-blue"><span class="dot"></span>Confirmado</span></td></tr>
+              <tr><td class="cell-primary">Bruno Lima</td><td>João Pedro</td><td>Corte + Sobrancelha</td><td>21/09 · 11:30</td><td><span class="badge badge-red"><span class="dot"></span>Faltou</span></td></tr>
+              <tr><td class="cell-primary">Anderson Melo</td><td>Yuri Castro</td><td>Pigmentação</td><td>21/09 · 13:00</td><td><span class="badge badge-gold"><span class="dot"></span>Agendado</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+    </main>
+  </div>
+</div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

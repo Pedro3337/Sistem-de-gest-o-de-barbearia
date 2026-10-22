@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha agenda · Corte&amp;Cia</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h9l4-4v8l-4-4"/><path d="M17 12h3"/></svg></div>
+      <div class="sidebar__brand-text">
+        <div class="name">Corte&amp;Cia</div>
+        <div class="role">Barbeiro</div>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+        <a class="nav-item active" href="agenda.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 3v4M16 3v4"/></svg><span>Minha agenda</span></a>
+        <a class="nav-item" href="atendimentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Atendimentos</span></a>
+        <a class="nav-item" href="pagamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 14h2"/></svg><span>Pagamentos</span></a>
+        <a class="nav-item" href="relatorios.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M11 20V4M18 20v-7"/><path d="M3 20h18"/></svg><span>Meus relatórios</span></a>
+        <a class="nav-item" href="perfil.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6"/></svg><span>Meu perfil</span></a>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="../login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M15 16l5-4-5-4M20 12H9"/></svg><span>Sair</span></a>
+    </div>
+  </aside>
+  <div class="nav-scrim" data-nav-scrim></div>
+  <div class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;min-width:0;">
+        <button class="menu-toggle" data-menu-toggle aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="topbar__title">
+          <h1>Minha agenda</h1>
+          <p>Atendimentos do dia</p>
+        </div>
+      </div>
+      <div class="topbar__right">
+        <button class="icon-btn" aria-label="Notificações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9a6 6 0 1112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 13 6 9z"/><path d="M10 18a2 2 0 004 0"/></svg></button>
+        <div class="user-chip">
+          <div class="avatar">JP</div>
+          <div class="who"><div class="n">João Pedro Alves</div><div class="r">Barbeiro</div></div>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+
+      <div class="page-head">
+        <div><h2>Minha agenda</h2><p class="sub">Seus atendimentos de hoje, na ordem em que acontecem.</p></div>
+        <div style="display:flex;gap:8px;">
+          <button class="icon-btn" aria-label="Dia anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <span class="btn btn-outline btn-sm" style="pointer-events:none;">21 de setembro</span>
+          <button class="icon-btn" aria-label="Próximo dia" style="transform:scaleX(-1);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg></button>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="label">Atendimentos hoje</div><div class="value">7</div></div>
+        <div class="stat-card"><div class="label">Concluídos</div><div class="value">2</div></div>
+        <div class="stat-card"><div class="label">Próximo horário</div><div class="value">10:45</div></div>
+        <div class="stat-card"><div class="label">Faturado hoje</div><div class="value">R$ 210</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card__head"><div><h3>Agenda de hoje</h3><div class="sub">Toque em confirmar, iniciar ou finalizar conforme o atendimento avança</div></div></div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-time">09:00<span>concluído</span></div>
+            <div class="tl-info"><div class="title">Anderson Melo — Pigmentação</div><div class="meta">Duração 25 min · R$ 30,00</div></div>
+            <span class="badge badge-green"><span class="dot"></span>Concluído</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">09:30<span>confirmado</span></div>
+            <div class="tl-info"><div class="title">Rafael Menezes — Corte + Barba</div><div class="meta">Duração 60 min · R$ 70,00</div></div>
+            <div class="tl-actions"><button class="btn btn-outline btn-sm">Iniciar atendimento</button></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">10:45<span>agendado</span></div>
+            <div class="tl-info"><div class="title">Felipe Torres — Corte degradê</div><div class="meta">Duração 40 min · R$ 45,00</div></div>
+            <div class="tl-actions"><button class="btn btn-primary btn-sm">Confirmar</button></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">11:30<span>agendado</span></div>
+            <div class="tl-info"><div class="title">Bruno Lima — Corte + Sobrancelha</div><div class="meta">Duração 55 min · R$ 60,00</div></div>
+            <div class="tl-actions"><button class="btn btn-primary btn-sm">Confirmar</button><button class="btn btn-danger-outline btn-sm">Recusar</button></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-time">13:00<span>agendado</span></div>
+            <div class="tl-info"><div class="title">Thiago Rocha — Barba completa</div><div class="meta">Duração 30 min · R$ 35,00</div></div>
+            <div class="tl-actions"><button class="btn btn-primary btn-sm">Confirmar</button></div>
+          </div>
+        </div>
+      </div>
+    
+    </main>
+  </div>
+</div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

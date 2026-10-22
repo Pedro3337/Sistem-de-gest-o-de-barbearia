@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu perfil · Corte&amp;Cia</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h9l4-4v8l-4-4"/><path d="M17 12h3"/></svg></div>
+      <div class="sidebar__brand-text">
+        <div class="name">Corte&amp;Cia</div>
+        <div class="role">Barbeiro</div>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+        <a class="nav-item" href="agenda.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 3v4M16 3v4"/></svg><span>Minha agenda</span></a>
+        <a class="nav-item" href="atendimentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Atendimentos</span></a>
+        <a class="nav-item" href="pagamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 14h2"/></svg><span>Pagamentos</span></a>
+        <a class="nav-item" href="relatorios.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M11 20V4M18 20v-7"/><path d="M3 20h18"/></svg><span>Meus relatórios</span></a>
+        <a class="nav-item active" href="perfil.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6"/></svg><span>Meu perfil</span></a>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="../login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M15 16l5-4-5-4M20 12H9"/></svg><span>Sair</span></a>
+    </div>
+  </aside>
+  <div class="nav-scrim" data-nav-scrim></div>
+  <div class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;min-width:0;">
+        <button class="menu-toggle" data-menu-toggle aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="topbar__title">
+          <h1>Meu perfil</h1>
+          <p>Dados profissionais e disponibilidade</p>
+        </div>
+      </div>
+      <div class="topbar__right">
+        <button class="icon-btn" aria-label="Notificações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9a6 6 0 1112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 13 6 9z"/><path d="M10 18a2 2 0 004 0"/></svg></button>
+        <div class="user-chip">
+          <div class="avatar">JP</div>
+          <div class="who"><div class="n">João Pedro Alves</div><div class="r">Barbeiro</div></div>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+
+      <div class="page-head">
+        <div><h2>Meu perfil</h2><p class="sub">Suas informações profissionais e disponibilidade.</p></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card__head"><h3>Dados pessoais</h3></div>
+          <div class="card__body">
+            <form data-demo-form>
+              <div class="form-grid">
+                <div class="field"><label>Nome completo</label><input type="text" value="João Pedro Alves"></div>
+                <div class="field"><label>Telefone</label><input type="text" value="(75) 99111-2233"></div>
+                <div class="field full"><label>E-mail</label><input type="email" value="joao.pedro@corteecia.com"></div>
+                <div class="field full"><label>Especialidade</label><input type="text" value="Cortes clássicos e degradê"></div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-primary">Salvar alterações</button></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><h3>Alterar senha</h3></div>
+          <div class="card__body">
+            <form data-demo-form>
+              <div class="form-grid">
+                <div class="field full"><label>Senha atual</label><input type="password" placeholder="••••••••"></div>
+                <div class="field"><label>Nova senha</label><input type="password" placeholder="••••••••"></div>
+                <div class="field"><label>Confirmar nova senha</label><input type="password" placeholder="••••••••"></div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-outline">Atualizar senha</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:20px;">
+        <div class="card__head"><div><h3>Disponibilidade semanal</h3><div class="sub">Dias em que você atende na barbearia</div></div></div>
+        <div class="card__body" style="display:flex;gap:22px;flex-wrap:wrap;"><label style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--muted);"><input type="checkbox" checked>Seg</label><label style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--muted);"><input type="checkbox" checked>Ter</label><label style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--muted);"><input type="checkbox" checked>Qua</label><label style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--muted);"><input type="checkbox" checked>Qui</label><label style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--muted);"><input type="checkbox" checked>Sex</label><label style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--muted);"><input type="checkbox" checked>Sáb</label><label style="display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:var(--muted);"><input type="checkbox" >Dom</label></div>
+        <div class="form-actions" style="padding:0 22px 22px;"><button class="btn btn-primary">Salvar disponibilidade</button></div>
+      </div>
+    
+    </main>
+  </div>
+</div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

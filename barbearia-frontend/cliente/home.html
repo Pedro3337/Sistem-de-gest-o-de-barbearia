@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Início · Corte&amp;Cia</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h9l4-4v8l-4-4"/><path d="M17 12h3"/></svg></div>
+      <div class="sidebar__brand-text">
+        <div class="name">Corte&amp;Cia</div>
+        <div class="role">Cliente</div>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+        <a class="nav-item active" href="home.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v9.5a1 1 0 001 1h10a1 1 0 001-1V10"/></svg><span>Início</span></a>
+        <a class="nav-item" href="agendar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 3v4M16 3v4"/></svg><span>Agendar horário</span></a>
+        <a class="nav-item" href="agendamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Meus agendamentos</span></a>
+        <a class="nav-item" href="historico.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 109-9"/><path d="M3 4v5h5M12 7v5l3.5 2"/></svg><span>Histórico</span></a>
+        <a class="nav-item" href="perfil.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6"/></svg><span>Meu perfil</span></a>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="../login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M15 16l5-4-5-4M20 12H9"/></svg><span>Sair</span></a>
+    </div>
+  </aside>
+  <div class="nav-scrim" data-nav-scrim></div>
+  <div class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;min-width:0;">
+        <button class="menu-toggle" data-menu-toggle aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="topbar__title">
+          <h1>Início</h1>
+          <p>Sua página inicial na Corte&Cia</p>
+        </div>
+      </div>
+      <div class="topbar__right">
+        <button class="icon-btn" aria-label="Notificações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9a6 6 0 1112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 13 6 9z"/><path d="M10 18a2 2 0 004 0"/></svg></button>
+        <div class="user-chip">
+          <div class="avatar">RM</div>
+          <div class="who"><div class="n">Rafael Menezes</div><div class="r">Cliente</div></div>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+
+      <div class="page-head">
+        <div><h2>Olá, Rafael</h2><p class="sub">Aqui está o resumo da sua conta na Corte&amp;Cia.</p></div>
+        <a class="btn btn-primary" href="agendar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Agendar horário</a>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:20px;">
+        <div class="card">
+          <div class="card__head"><div><h3>Seu próximo agendamento</h3></div><span class="badge badge-gold"><span class="dot"></span>Agendado</span></div>
+          <div class="card__body">
+            <div class="tl-item" style="padding:0;border:none;">
+              <div class="tl-time">09:30<span>hoje</span></div>
+              <div class="tl-info"><div class="title">Corte + Barba</div><div class="meta">com João Pedro Alves · R$ 70,00</div></div>
+              <div class="tl-actions"><a class="btn btn-outline btn-sm" href="agendamentos.html">Gerenciar</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__head"><h3>Resumo</h3></div>
+          <div class="card__body" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+            <div><div class="label" style="font-size:12.5px;color:var(--muted);">Total de cortes</div><div style="font-family:'Fraunces',serif;font-size:22px;margin-top:4px;">18</div></div>
+            <div><div class="label" style="font-size:12.5px;color:var(--muted);">Barbeiro favorito</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:4px;">João Pedro</div></div>
+            <div><div class="label" style="font-size:12.5px;color:var(--muted);">Cliente desde</div><div style="font-family:'Fraunces',serif;font-size:18px;margin-top:4px;">Mar/2024</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <div><h3>Últimos atendimentos</h3></div>
+          <a class="btn btn-ghost btn-sm" href="historico.html">Ver histórico completo</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Data</th><th>Serviço</th><th>Barbeiro</th><th>Valor pago</th></tr></thead>
+            <tbody>
+              <tr><td class="cell-primary">19/09/2026</td><td>Corte degradê</td><td>João Pedro</td><td>R$ 45,00</td></tr>
+              <tr><td class="cell-primary">02/09/2026</td><td>Corte + Barba</td><td>João Pedro</td><td>R$ 70,00</td></tr>
+              <tr><td class="cell-primary">18/08/2026</td><td>Sobrancelha</td><td>Yuri Castro</td><td>R$ 15,00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+    </main>
+  </div>
+</div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

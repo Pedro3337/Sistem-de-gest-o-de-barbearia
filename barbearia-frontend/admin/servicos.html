@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serviços · Corte&amp;Cia</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h9l4-4v8l-4-4"/><path d="M17 12h3"/></svg></div>
+      <div class="sidebar__brand-text">
+        <div class="name">Corte&amp;Cia</div>
+        <div class="role">Administrador</div>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+        <a class="nav-item" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="12" width="8" height="9" rx="1.5"/><rect x="3" y="14" width="8" height="7" rx="1.5"/></svg><span>Dashboard</span></a>
+        <a class="nav-item" href="usuarios.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="8" r="3"/><path d="M2.5 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="17" cy="8.5" r="2.4"/><path d="M15.5 14.2c2.6.4 4.6 2.5 4.6 5.8"/></svg><span>Usuários</span></a>
+        <a class="nav-item" href="clientes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6"/></svg><span>Clientes</span></a>
+        <a class="nav-item" href="barbeiros.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6.5" r="2.4"/><circle cx="6" cy="17.5" r="2.4"/><path d="M8 8l12 12M20 4L8 16"/></svg><span>Barbeiros</span></a>
+        <a class="nav-item active" href="servicos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h9l4-4v8l-4-4"/><path d="M17 12h3"/></svg><span>Serviços</span></a>
+        <a class="nav-item" href="agendamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 3v4M16 3v4"/></svg><span>Agendamentos</span></a>
+        <a class="nav-item" href="relatorios.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M11 20V4M18 20v-7"/><path d="M3 20h18"/></svg><span>Relatórios</span></a>
+        <a class="nav-item" href="configuracoes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.2-1.6l2-1.5-2-3.4-2.3.8a7 7 0 00-2.7-1.6L13.4 2h-2.8l-.4 2.7a7 7 0 00-2.7 1.6l-2.3-.8-2 3.4 2 1.5A7 7 0 005 12a7 7 0 00.2 1.6l-2 1.6 2 3.4 2.3-.9c.8.7 1.7 1.3 2.7 1.6l.4 2.7h2.8l.4-2.7c1-.3 1.9-.9 2.7-1.6l2.3.9 2-3.4-2-1.6c.1-.5.2-1 .2-1.6z"/></svg><span>Configurações</span></a>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="../login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M15 16l5-4-5-4M20 12H9"/></svg><span>Sair</span></a>
+    </div>
+  </aside>
+  <div class="nav-scrim" data-nav-scrim></div>
+  <div class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;min-width:0;">
+        <button class="menu-toggle" data-menu-toggle aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="topbar__title">
+          <h1>Serviços</h1>
+          <p>Catálogo e preços</p>
+        </div>
+      </div>
+      <div class="topbar__right">
+        <button class="icon-btn" aria-label="Notificações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9a6 6 0 1112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 13 6 9z"/><path d="M10 18a2 2 0 004 0"/></svg></button>
+        <div class="user-chip">
+          <div class="avatar">MS</div>
+          <div class="who"><div class="n">Marina Souza</div><div class="r">Administrador</div></div>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+
+      <div class="page-head">
+        <div><h2>Serviços</h2><p class="sub">Catálogo de serviços oferecidos pela barbearia.</p></div>
+        <button class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Novo serviço</button>
+      </div>
+      <div class="card">
+        <div class="toolbar">
+          <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></svg><input type="text" placeholder="Buscar serviço"></div>
+          <select class="select"><option>Todos os status</option><option>Ativo</option><option>Inativo</option></select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Nome</th><th>Descrição</th><th>Duração</th><th>Preço</th><th>Status</th><th></th></tr></thead>
+            <tbody><tr>
+              <td class="cell-primary">Corte degradê</td>
+              <td class="cell-muted">Corte moderno com máquina e tesoura</td>
+              <td>40 min</td>
+              <td>R$ 45,00</td>
+              <td><span class="badge badge-green"><span class="dot"></span>Ativo</span></td>
+              <td><div class="row-actions"><button class="icon-btn" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4L19.5 8.5a2 2 0 00-4-4L4 16v4z"/></svg></button><button class="icon-btn" aria-label="Excluir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button></div></td>
+            </tr>
+<tr>
+              <td class="cell-primary">Barba completa</td>
+              <td class="cell-muted">Toalha quente, navalha e finalização</td>
+              <td>30 min</td>
+              <td>R$ 35,00</td>
+              <td><span class="badge badge-green"><span class="dot"></span>Ativo</span></td>
+              <td><div class="row-actions"><button class="icon-btn" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4L19.5 8.5a2 2 0 00-4-4L4 16v4z"/></svg></button><button class="icon-btn" aria-label="Excluir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button></div></td>
+            </tr>
+<tr>
+              <td class="cell-primary">Corte + Barba</td>
+              <td class="cell-muted">Combo completo de corte e barba</td>
+              <td>60 min</td>
+              <td>R$ 70,00</td>
+              <td><span class="badge badge-green"><span class="dot"></span>Ativo</span></td>
+              <td><div class="row-actions"><button class="icon-btn" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4L19.5 8.5a2 2 0 00-4-4L4 16v4z"/></svg></button><button class="icon-btn" aria-label="Excluir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button></div></td>
+            </tr>
+<tr>
+              <td class="cell-primary">Sobrancelha</td>
+              <td class="cell-muted">Design com navalha</td>
+              <td>15 min</td>
+              <td>R$ 15,00</td>
+              <td><span class="badge badge-green"><span class="dot"></span>Ativo</span></td>
+              <td><div class="row-actions"><button class="icon-btn" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4L19.5 8.5a2 2 0 00-4-4L4 16v4z"/></svg></button><button class="icon-btn" aria-label="Excluir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button></div></td>
+            </tr>
+<tr>
+              <td class="cell-primary">Pigmentação</td>
+              <td class="cell-muted">Camuflagem de fios brancos na barba</td>
+              <td>25 min</td>
+              <td>R$ 30,00</td>
+              <td><span class="badge badge-muted"><span class="dot"></span>Inativo</span></td>
+              <td><div class="row-actions"><button class="icon-btn" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4L19.5 8.5a2 2 0 00-4-4L4 16v4z"/></svg></button><button class="icon-btn" aria-label="Excluir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button></div></td>
+            </tr>
+<tr>
+              <td class="cell-primary">Corte infantil</td>
+              <td class="cell-muted">Corte para crianças até 10 anos</td>
+              <td>30 min</td>
+              <td>R$ 35,00</td>
+              <td><span class="badge badge-green"><span class="dot"></span>Ativo</span></td>
+              <td><div class="row-actions"><button class="icon-btn" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4L19.5 8.5a2 2 0 00-4-4L4 16v4z"/></svg></button><button class="icon-btn" aria-label="Excluir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button></div></td>
+            </tr></tbody>
+          </table>
+        </div>
+        <div class="pagination"><span>Mostrando 6 de 9 serviços</span><div class="pg-btns"><button class="active">1</button><button>2</button></div></div>
+      </div>
+    
+    </main>
+  </div>
+</div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

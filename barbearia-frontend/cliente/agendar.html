@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agendar horário · Corte&amp;Cia</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h9l4-4v8l-4-4"/><path d="M17 12h3"/></svg></div>
+      <div class="sidebar__brand-text">
+        <div class="name">Corte&amp;Cia</div>
+        <div class="role">Cliente</div>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+        <a class="nav-item" href="home.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v9.5a1 1 0 001 1h10a1 1 0 001-1V10"/></svg><span>Início</span></a>
+        <a class="nav-item active" href="agendar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 3v4M16 3v4"/></svg><span>Agendar horário</span></a>
+        <a class="nav-item" href="agendamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Meus agendamentos</span></a>
+        <a class="nav-item" href="historico.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 109-9"/><path d="M3 4v5h5M12 7v5l3.5 2"/></svg><span>Histórico</span></a>
+        <a class="nav-item" href="perfil.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6"/></svg><span>Meu perfil</span></a>
+    </nav>
+    <div class="sidebar__footer">
+      <a class="nav-item" href="../login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M15 16l5-4-5-4M20 12H9"/></svg><span>Sair</span></a>
+    </div>
+  </aside>
+  <div class="nav-scrim" data-nav-scrim></div>
+  <div class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;min-width:0;">
+        <button class="menu-toggle" data-menu-toggle aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="topbar__title">
+          <h1>Agendar horário</h1>
+          <p>Escolha o serviço e o melhor horário</p>
+        </div>
+      </div>
+      <div class="topbar__right">
+        <button class="icon-btn" aria-label="Notificações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9a6 6 0 1112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 13 6 9z"/><path d="M10 18a2 2 0 004 0"/></svg></button>
+        <div class="user-chip">
+          <div class="avatar">RM</div>
+          <div class="who"><div class="n">Rafael Menezes</div><div class="r">Cliente</div></div>
+        </div>
+      </div>
+    </header>
+    <main class="content">
+
+      <div class="page-head">
+        <div><h2>Agendar horário</h2><p class="sub">Escolha o serviço, o barbeiro e o melhor horário para você.</p></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card__head"><h3>Detalhes do agendamento</h3></div>
+          <div class="card__body">
+            <form data-demo-form>
+              <div class="form-grid">
+                <div class="field full">
+                  <label>Serviço</label>
+                  <select>
+                    <option>Corte degradê — R$ 45,00 (40 min)</option>
+                    <option>Barba completa — R$ 35,00 (30 min)</option>
+                    <option selected>Corte + Barba — R$ 70,00 (60 min)</option>
+                    <option>Sobrancelha — R$ 15,00 (15 min)</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label>Barbeiro</label>
+                  <select>
+                    <option selected>João Pedro Alves — Cortes clássicos e degradê</option>
+                    <option>Lucas Andrade — Barba e navalha</option>
+                    <option>Yuri Castro — Cortes infantis</option>
+                  </select>
+                </div>
+                <div class="field"><label>Data</label><input type="date" value="2026-09-24"></div>
+                <div class="field"><label>Duração estimada</label><input type="text" value="60 minutos" disabled></div>
+                <div class="field full">
+                  <label>Horários disponíveis</label>
+                  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;"><button class="btn btn-outline btn-sm">08:00</button><button class="btn btn-outline btn-sm">08:30</button><button class="btn btn-outline btn-sm" style="background:var(--cream-2);color:var(--muted-2);pointer-events:none;">09:00</button><button class="btn btn-outline btn-sm" style="background:var(--cream-2);color:var(--muted-2);pointer-events:none;">09:30</button><button class="btn btn-outline btn-sm">10:00</button><button class="btn btn-outline btn-sm active-slot">10:30</button><button class="btn btn-outline btn-sm">11:00</button><button class="btn btn-outline btn-sm">11:30</button><button class="btn btn-outline btn-sm">14:00</button><button class="btn btn-outline btn-sm" style="background:var(--cream-2);color:var(--muted-2);pointer-events:none;">14:30</button><button class="btn btn-outline btn-sm">15:00</button><button class="btn btn-outline btn-sm">15:30</button></div>
+                  <span class="hint">Horários em cinza já estão reservados.</span>
+                </div>
+                <div class="field full"><label>Observações (opcional)</label><textarea placeholder="Alguma preferência para o seu atendimento?"></textarea></div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>Confirmar agendamento</button></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card" style="align-self:start;">
+          <div class="card__head"><h3>Resumo</h3></div>
+          <div class="card__body">
+            <div style="display:flex;flex-direction:column;gap:12px;font-size:13.6px;">
+              <div class="flex-between"><span class="muted">Serviço</span><span class="cell-primary">Corte + Barba</span></div>
+              <div class="flex-between"><span class="muted">Barbeiro</span><span class="cell-primary">João Pedro Alves</span></div>
+              <div class="flex-between"><span class="muted">Data</span><span class="cell-primary">24/09/2026</span></div>
+              <div class="flex-between"><span class="muted">Horário</span><span class="cell-primary">10:30</span></div>
+              <div class="flex-between"><span class="muted">Duração</span><span class="cell-primary">60 min</span></div>
+              <hr style="border:none;border-top:1px solid var(--line);margin:4px 0;">
+              <div class="flex-between"><span class="muted">Valor total</span><span style="font-family:'Fraunces',serif;font-size:20px;">R$ 70,00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </main>
+  </div>
+</div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
