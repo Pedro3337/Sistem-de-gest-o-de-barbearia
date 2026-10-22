@@ -71,7 +71,7 @@ class CostumerServiceRepository(ICostumerServiceRepository):
 
     def response_costumer_service_where_barber_id_and_date(self, barber: UUID, date: date) -> List[CostumerServiceEntity]:
         try:
-            return [self._to_model(costumer_service) for costumer_service in CostumerService.objects.filter(barber=barber, month=month)]
+            return [self._to_model(costumer_service) for costumer_service in CostumerService.objects.filter(barber=barber, date=date)]
         except CostumerService.DoesNotExist:
             return None
 
